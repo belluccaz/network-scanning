@@ -26,7 +26,7 @@ sudo apt update && sudo apt install nmap arp-scan
 
 @belluccaz
 
-Redes sociais e contato:
+## Redes sociais e contato:
 
-Twitter/Instagram/Threads/TikTok: @thematrixbunny
-Email: thematrixbunny@proton.me
+- Twitter/Instagram/Threads/TikTok: @thematrixbunny
+- Email: thematrixbunny@proton.me
