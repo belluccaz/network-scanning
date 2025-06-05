@@ -24,4 +24,9 @@ sudo apt update && sudo apt install nmap arp-scan
 - USO APENAS EM REDES AUTORIZADAS.
 - Responsabilidade pelo uso é inteiramente do usuário.
 
-@TheMatrixBunny
+@belluccaz
+
+Redes sociais e contato:
+
+Twitter/Instagram/Threads/TikTok: @thematrixbunny
+Email: thematrixbunny@proton.me
