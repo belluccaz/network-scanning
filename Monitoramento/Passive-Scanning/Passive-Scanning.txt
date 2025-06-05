@@ -1,0 +1,26 @@
+#######################################################
+# ESCANEAMENTO PASSIVO DE REDES WI-FI VIZINHAS (AIRMON)
+#######################################################
+
+1. Verificar interface wireless disponível
+-------------------------------------------
+iwconfig
+
+2. Ativar modo monitor
+------------------------
+sudo airmon-ng start wlan0
+
+3. Iniciar escaneamento passivo
+--------------------------------
+sudo airodump-ng wlan0mon
+
+4. Observação
+---------------
+- Não conecte, apenas observe.
+- Anote BSSID, CH e ESSID das redes suspeitas.
+- Você pode exportar logs com:
+  sudo airodump-ng -w redes_vizinhas --output-format csv wlan0mon
+
+5. Para finalizar
+-------------------
+sudo airmon-ng stop wlan0mon

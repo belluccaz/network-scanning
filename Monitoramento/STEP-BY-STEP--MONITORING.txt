@@ -1,0 +1,33 @@
+STEP BY STEP -- MONITORING
+
+##############################################
+# 1. Instalar ferramentas necessárias
+##############################################
+sudo apt update
+sudo apt install net-tools nmap arp-scan netdiscover whois -y
+
+##############################################
+# 2. Scan ARP (Descobre IP, MAC e fabricante)
+##############################################
+sudo arp-scan --interface=wlan0 --localnet | tee ~/scan_arp.txt
+
+##############################################
+# 3. Scan com Netdiscover (varredura passiva)
+##############################################
+sudo netdiscover -r 192.168.0.0/24 | tee ~/netdiscover_log.txt
+
+##############################################
+# 4. Nmap completo (identifica portas abertas,
+# sistemas operacionais e serviços ativos)
+##############################################
+sudo nmap -sS -sV -O 192.168.0.0/24 | tee ~/nmap_fullscan.txt
+
+##############################################
+# 5. Opcional: WHOIS em IPs suspeitos
+##############################################
+whois 192.168.0.105 | tee ~/whois_192.168.0.105.txt  # Substitua pelo IP desejado
+
+##############################################
+# 6. Unificar tudo em um único log final
+##############################################
+cat ~/scan_arp.txt ~/netdiscover_log.txt ~/nmap_fullscan.txt > ~/log_rede_completa.txt

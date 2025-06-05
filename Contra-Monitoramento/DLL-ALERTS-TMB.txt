@@ -1,0 +1,35 @@
+#######################################################
+# DASHBOARD LOCAL DE LOGS E ALERTAS – THE MATRIX BUNNY
+#######################################################
+
+Objetivo: Centralizar logs de rede, conexões e tráfego suspeito.
+
+1. Criar pasta de vigilância
+------------------------------
+mkdir -p ~/matrix_monitor/logs
+
+2. Script de coleta de dispositivos
+------------------------------------
+~/matrix_monitor/log_dispositivos.sh
+
+#!/bin/bash
+while true; do
+  echo "### $(date)" >> ~/matrix_monitor/logs/dispositivos.txt
+  arp-scan --interface=wlan0 --localnet >> ~/matrix_monitor/logs/dispositivos.txt
+  sleep 300
+done
+
+3. Script de tráfego do roteador
+----------------------------------
+~/matrix_monitor/log_gateway.sh
+
+#!/bin/bash
+tcpdump -i wlan0 host 192.168.0.1 -vvv > ~/matrix_monitor/logs/trafego_gateway.txt
+
+4. Comando para verificar dispositivos em tempo real
+------------------------------------------------------
+watch -n 10 "arp -a | grep -v incomplete"
+
+5. Comando para análise simbólica rápida
+-----------------------------------------
+grep -i 'unknown\|mercury\|arcadyan' ~/matrix_monitor/logs/dispositivos.txt
