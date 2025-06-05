@@ -1,5 +1,5 @@
 #######################################################
-# ESCANEAMENTO PASSIVO DE REDES WI-FI VIZINHAS (AIRMON)
+# ESCANEAMENTO PASSIVO DE REDES WI-FI PRÓXIMAS (AIRMON)
 #######################################################
 
 1. Verificar interface wireless disponível
@@ -19,7 +19,7 @@ sudo airodump-ng wlan0mon
 - Não conecte, apenas observe.
 - Anote BSSID, CH e ESSID das redes suspeitas.
 - Você pode exportar logs com:
-  sudo airodump-ng -w redes_vizinhas --output-format csv wlan0mon
+  sudo airodump-ng -w redes_próximas --output-format csv wlan0mon
 
 5. Para finalizar
 -------------------

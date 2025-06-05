@@ -14,18 +14,18 @@ sudo arp-scan --interface=wlan0 --localnet | tee ~/scan_arp.txt
 ##############################################
 # 3. Scan com Netdiscover (varredura passiva)
 ##############################################
-sudo netdiscover -r 192.168.0.0/24 | tee ~/netdiscover_log.txt
+sudo netdiscover -r IP_AQUI | tee ~/netdiscover_log.txt
 
 ##############################################
 # 4. Nmap completo (identifica portas abertas,
 # sistemas operacionais e serviços ativos)
 ##############################################
-sudo nmap -sS -sV -O 192.168.0.0/24 | tee ~/nmap_fullscan.txt
+sudo nmap -sS -sV -O IP_AQUI | tee ~/nmap_fullscan.txt
 
 ##############################################
 # 5. Opcional: WHOIS em IPs suspeitos
 ##############################################
-whois 192.168.0.105 | tee ~/whois_192.168.0.105.txt  # Substitua pelo IP desejado
+whois IP_AQUI | tee ~/whois_IP_AQUI.txt  # Substitua pelo IP desejado
 
 ##############################################
 # 6. Unificar tudo em um único log final

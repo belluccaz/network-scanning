@@ -14,8 +14,8 @@ mkdir -p ~/matrix_monitor/logs
 
 #!/bin/bash
 while true; do
-  echo "### $(date)" >> ~/matrix_monitor/logs/dispositivos.txt
-  arp-scan --interface=wlan0 --localnet >> ~/matrix_monitor/logs/dispositivos.txt
+  echo "### $(date)" >> ~/CAMINHO_PARA_LOGS/logs/dispositivos.txt
+  arp-scan --interface=wlan0 --localnet >> ~/CAMINHO_PARA_LOGS/logs/dispositivos.txt
   sleep 300
 done
 
@@ -24,7 +24,7 @@ done
 ~/matrix_monitor/log_gateway.sh
 
 #!/bin/bash
-tcpdump -i wlan0 host 192.168.0.1 -vvv > ~/matrix_monitor/logs/trafego_gateway.txt
+tcpdump -i wlan0 host SEU IP AQUI -vvv > ~/CAMINHO_PARA_LOGS/logs/trafego_gateway.txt
 
 4. Comando para verificar dispositivos em tempo real
 ------------------------------------------------------
@@ -32,4 +32,4 @@ watch -n 10 "arp -a | grep -v incomplete"
 
 5. Comando para análise simbólica rápida
 -----------------------------------------
-grep -i 'unknown\|mercury\|arcadyan' ~/matrix_monitor/logs/dispositivos.txt
+grep -i 'unknown\|mercury\|arcadyan' ~/CAMINHO_PARA_LOGS/logs/dispositivos.txt

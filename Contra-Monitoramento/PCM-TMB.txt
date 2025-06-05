@@ -1,5 +1,5 @@
 ##############################################
-# PLANO DE CONTRA-MONITORAMENTO – MATRIX BUNNY
+# PLANO DE CONTRA-MONITORAMENTO – THE MATRIX BUNNY
 ##############################################
 
 Objetivo: Criar blindagem digital contra monitoramento local via rede LAN/Wi-Fi, usando ferramentas nativas do Linux (Kali/Ubuntu) com foco em dispositivos desconhecidos, roteadores com UPnP ativo e conexões misteriosas.
@@ -7,12 +7,11 @@ Objetivo: Criar blindagem digital contra monitoramento local via rede LAN/Wi-Fi,
 BLOQUEIO DE DISPOSITIVOS SUSPEITOS (UFW)
 --------------------------------------------
 sudo ufw enable
-sudo ufw deny from 192.168.0.23
-sudo ufw deny from 192.168.0.250
+sudo ufw deny from IP AQUI
 
 MONITORAMENTO DE TRÁFEGO DO ROTEADOR
 --------------------------------------------
-sudo tcpdump -i wlan0 host 192.168.0.1 -vvv > ~/trafego_gateway.txt
+sudo tcpdump -i wlan0 host IP_DO_ROTEADOR -vvv > ~/trafego_gateway.txt
 
 MONITORAMENTO CÍCLICO DE DISPOSITIVOS ATIVOS
 -------------------------------------------------
@@ -27,8 +26,8 @@ done
 
 TESTE DE VULNERABILIDADES DO ROTEADOR
 --------------------------------------------
-sudo nmap -sV --script vuln 192.168.0.1
+sudo nmap -sV --script vuln IP AQUI
 
 ANÁLISE COMPLETA DA REDE EM TEMPO REAL
 --------------------------------------------
-sudo nmap -sS -sV -O 192.168.0.0/24 -oN ~/nmap_completo.txt
+sudo nmap -sS -sV -O IP AQUI -oN ~/nmap_completo.txt
